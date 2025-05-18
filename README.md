@@ -13,7 +13,24 @@ This script performs aggressive write operations designed to:
 2. **4K random writes** - Most damaging pattern for NAND flash
 3. **Direct device hammering** - Bypasses some wear-leveling
 4. **Continuous operation** - Prevents garbage collection
+## 🚀 How to Run
+# 1. Install required tools
+sudo apt update && sudo apt install -y fio
 
+# 2. Download the script
+wget https://raw.githubusercontent.com/PringelsDC/ssd-destroyer/main/sedo.sh
+chmod +x sedo.sh
+## 🔍 Identify target Device
+# List all available disks (BE VERY CAREFUL HERE!)
+lsblk -o NAME,MODEL,SIZE,SERIAL,MOUNTPOINT
+
+# Example output:
+# NAME        MODEL               SIZE MOUNTPOINT
+# nvme0n1     Samsung 980 PRO     1TB /
+# sda         Crucial MX500       2TB /mnt/data
+## 💥 Exeute
+# Run with absolute certainty you've selected the correct device
+sudo ./sedo.sh
 ## 🔥 Damage Potential
 - Consumer SSDs may fail within **hours/days**
 - Enterprise SSDs may last **days/weeks**
