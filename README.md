@@ -24,10 +24,6 @@ chmod +x sedo.sh
 # List all available disks (BE VERY CAREFUL HERE!)
 lsblk -o NAME,MODEL,SIZE,SERIAL,MOUNTPOINT
 
-# Example output:
-# NAME        MODEL               SIZE MOUNTPOINT
-# nvme0n1     Samsung 980 PRO     1TB /
-# sda         Crucial MX500       2TB /mnt/data
 ## 💥 Exeute
 # Run with absolute certainty you've selected the correct device
 sudo ./sedo.sh
